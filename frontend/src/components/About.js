@@ -35,7 +35,7 @@ const About = () => {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-luxury-dark mb-6">
-            About <span className="luxury-text-gradient">LuxeTravel</span>
+            About <span className="luxury-text-gradient">GO.LK</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             For over 15 years, we have been crafting extraordinary travel experiences for discerning clients who demand the finest in luxury, service, and exclusivity. Our passion for perfection and attention to detail sets us apart in the world of luxury travel.

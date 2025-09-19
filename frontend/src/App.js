@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Destinations from './Destinations';
+import Destinations from './components/Destinations';
 
 import About from './components/About';
 function App() {

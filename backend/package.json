@@ -1,0 +1,35 @@
+{
+  "name": "go-lk-travel-backend",
+  "version": "1.0.0",
+  "description": "Backend API for GO.LK Travel Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "setup": "node install-dependencies.js",
+    "test": "node test-api.js",
+    "test:api": "node test-api.js"
+  },
+  "keywords": [
+    "travel",
+    "booking",
+    "api",
+    "express",
+    "mongodb"
+  ],
+  "author": "GO.LK Travel",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.18.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

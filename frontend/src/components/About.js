@@ -10,35 +10,36 @@ const About = () => {
 
   const team = [
     {
-      name: 'Sarah Johnson',
+      name: 'Daniel Mercer',
       role: 'Founder & CEO',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
-      description: 'Passionate about creating extraordinary travel experiences'
+      image: 'https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg',
+      description: 'Visionary leader driving innovation and excellence in global travel experiences.'
     },
     {
-      name: 'Michael Chen',
+      name: 'Adrian Cole',
       role: 'Head of Operations',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-      description: 'Ensuring every detail is perfect for our clients'
+      image: 'https://media.istockphoto.com/id/1682296067/photo/happy-studio-portrait-or-professional-man-real-estate-agent-or-asian-businessman-smile-for.jpg?s=612x612&w=0&k=20&c=9zbG2-9fl741fbTWw5fNgcEEe4ll-JegrGlQQ6m54rg=',
+      description: 'Operational strategist ensuring seamless journeys for every traveler.'
     },
     {
-      name: 'Emma Rodriguez',
+      name: 'Sophia Bennett',
       role: 'Travel Curator',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-      description: 'Expert in discovering hidden gems around the world'
+      image: 'https://img.freepik.com/premium-photo/young-beautiful-asian-woman-headshot-professional-businesswoman-lawyer-attorney-law_817921-701.jpg',
+      description: 'Expert curator crafting personalized and unforgettable travel adventures.'
     }
   ];
 
   return (
     <section id="about" className="py-20 bg-luxury-gray">
       <div className="container mx-auto px-6">
+
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-luxury-dark mb-6">
             About <span className="luxury-text-gradient">GO.LK</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            For over 15 years, we have been crafting extraordinary travel experiences for discerning clients who demand the finest in luxury, service, and exclusivity. Our passion for perfection and attention to detail sets us apart in the world of luxury travel.
+            For over 15 years, we have been crafting extraordinary travel experiences for discerning clients who demand the finest in luxury, service, and exclusivity. Our passion for perfection and attention to detail sets us apart in the world of premium travel.
           </p>
         </div>
 
@@ -61,24 +62,16 @@ const About = () => {
               Our Story
             </h3>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded in 2008 by travel enthusiasts who believed that every journey should be extraordinary, LuxeTravel began as a small boutique agency with a big dream. We started with a simple mission: to create travel experiences that go beyond expectations and create memories that last a lifetime.
+              Founded in 2008 by travel enthusiasts who believed that every journey should be extraordinary, GO.LK Travel began as a small boutique agency with a big dream. We started with a simple mission: to create travel experiences that go beyond expectations and create memories that last a lifetime.
             </p>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Today, we are proud to be one of the world's leading luxury travel companies, with a global network of partners and a team of dedicated professionals who share our passion for excellence. Every trip we plan is a masterpiece, carefully crafted to reflect our clients' unique desires and dreams.
+              Today, we are proud to be one of the world's leading premium travel companies, with a global network of partners and a team of dedicated professionals who share our passion for excellence. Every trip we plan is a masterpiece, carefully crafted to reflect our clients' unique desires and dreams.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="luxury-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                Our Philosophy
-              </button>
-              <button className="border-2 border-luxury-gold text-luxury-gold px-8 py-4 rounded-full font-semibold hover:bg-luxury-gold hover:text-white transition-all duration-300">
-                Awards & Recognition
-              </button>
-            </div>
           </div>
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="Luxury travel team"
+              alt="GO.LK travel team"
               className="rounded-2xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 luxury-gradient rounded-full opacity-20 animate-float"></div>

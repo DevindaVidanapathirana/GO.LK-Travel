@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Destinations = () => {
   const [activeDestination, setActiveDestination] = useState(0);
+  const navigate = useNavigate();
 
+  /* Destination Data */
   const destinations = [
     {
       id: 1,
-      name: 'Santorini, Greece',
-      image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      description: 'Experience the breathtaking sunsets and white-washed buildings of this iconic Greek island.',
+      name: 'Thailand',
+      image: 'https://cdn.forevervacation.com/uploads/blog/thailand-visitor-guide-things-to-do-4406.jpg',
+      description: 'Discover golden temples, vibrant street markets, and tropical beaches in the Land of Smiles.',
       price: 'From $2,500',
       duration: '7 days',
-      highlights: ['Private villa', 'Wine tasting', 'Sunset cruise', 'Photography tour']
+      highlights: ['Grand Palace tour','Street food experience in Bangkok','Phi Phi Islands boat trip','Floating market visit','Traditional Thai massage']
     },
     {
       id: 2,
       name: 'Maldives',
-      image: 'https://images.unsplash.com/photo-1506905925346-14bda2d134d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://samudramaldives.com/wp-content/uploads/where-is-maldives-location-of-maldives-on-world-map.jpg',
       description: 'Luxury overwater bungalows and crystal-clear waters await in this tropical paradise.',
       price: 'From $3,200',
       duration: '5 days',
@@ -24,16 +27,16 @@ const Destinations = () => {
     },
     {
       id: 3,
-      name: 'Swiss Alps',
-      image: 'https://images.unsplash.com/photo-1506905925346-14bda2d134d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      description: 'Majestic mountain views and world-class skiing in the heart of the Swiss Alps.',
+      name: 'New Zealand',
+      image: 'https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/EECD/production/_127033116_gettyimages-457521250.jpg',
+      description: 'Explore stunning fjords, snow-capped mountains, and emerald lakes in this adventure seeker’s paradise.',
       price: 'From $4,000',
       duration: '6 days',
-      highlights: ['Mountain lodge', 'Ski lessons', 'Helicopter tour', 'Fine dining']
+      highlights: ['Milford Sound cruise','Glowworm caves tour','Hobbiton movie set visit','Rotorua geothermal springs','Scenic hikes in Fiordland National Park']
     },
     {
       id: 4,
-      name: 'Kyoto, Japan',
+      name: 'Japan',
       image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       description: 'Immerse yourself in traditional Japanese culture and stunning temple gardens.',
       price: 'From $2,800',
@@ -140,10 +143,15 @@ const Destinations = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="luxury-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                <button 
+                  onClick={() => navigate('/booking')}
+                  className="luxury-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                   Book This Experience
                 </button>
-                <button className="border-2 border-luxury-gold text-luxury-gold px-8 py-4 rounded-full font-semibold hover:bg-luxury-gold hover:text-white transition-all duration-300">
+               
+                <button  
+                  onClick={() => navigate('/explore-destinations')} 
+                  className="border-2 border-luxury-gold text-luxury-gold px-8 py-4 rounded-full font-semibold hover:bg-luxury-gold hover:text-white transition-all duration-300">
                   Learn More
                 </button>
               </div>

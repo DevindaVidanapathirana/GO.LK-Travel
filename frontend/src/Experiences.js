@@ -63,7 +63,7 @@ const Experiences = () => {
         {
           id: 6,
           title: 'Mountain Climbing',
-          image: 'https://t3.ftcdn.net/jpg/01/89/10/70/C.jpg',
+          image: 'https://media.istockphoto.com/id/175515475/photo/mountains.jpg?s=612x612&w=0&k=20&c=e0TxdqpmQxgSYoHiB6F6x-SLsLbIeW7yM3weSBNyZ5U=',
           description: 'Conquer the world\'s most challenging peaks with expert guides',
           price: 'From $3,000',
           duration: '3-7 days',
@@ -86,7 +86,7 @@ const Experiences = () => {
         {
           id: 8,
           title: 'Traditional Ceremonies',
-          image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          image: 'https://www.balispiritfestival.com/wp-content/uploads/2019/07/So-what-is-the-importance-of-Ceremony-in-our-modern-world-Ceremony.jpg',
           description: 'Participate in authentic cultural ceremonies and traditions',
           price: 'From $600',
           duration: 'Half day',
@@ -95,7 +95,7 @@ const Experiences = () => {
         {
           id: 9,
           title: 'Artisan Workshops',
-          image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          image: 'https://www.ckrumlov.info/img/katalog/79/0b.jpg',
           description: 'Learn from master craftsmen in their traditional workshops',
           price: 'From $400',
           duration: '3-4 hours',
@@ -191,13 +191,13 @@ const Experiences = () => {
 
       {/* Call to Action */}
 <div className="text-center mt-20">
-  <div className="luxury-gradient rounded-3xl p-12 text-white relative overflow-hidden">
+  <div className="white rounded-3xl p-12 text-black relative overflow-hidden shadow-2xl">
     {/* Optional background pattern for extra luxury */}
     <div className="absolute inset-0 opacity-10">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')]"></div>
     </div>
     
-    <div className="relative z-10">
+    <div className="relative z-10"> 
       <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6">
         Ready to Create Your Dream Experience?
       </h3>
@@ -206,7 +206,7 @@ const Experiences = () => {
       </p>
       <button 
         onClick={() => navigate('/booking')}
-        className="bg-white text-luxury-dark px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+        className= 'w-full luxury-gradient text-white py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300'
       >
         Start Planning
       </button>

@@ -38,7 +38,7 @@ const Header = () => {
             <div className="w-10 h-10 luxury-gradient rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">GO</span>
             </div>
-            <span className="text-2xl font-serif font-bold luxury-text-gradient">
+            <span className="text-2xl font-serif font-bold text-black">
               GO.LK
             </span>
           </div>
@@ -49,7 +49,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-luxury-gold transition-colors duration-300 font-medium"
+                className="text-black hover:text-luxury-gold transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
@@ -64,7 +64,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-black"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-luxury-gold transition-colors duration-300 font-medium"
+                  className="text-black hover:text-luxury-gold transition-colors duration-300 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

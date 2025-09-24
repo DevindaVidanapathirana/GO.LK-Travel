@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop'; 
 
 // Import components
 import Header from './components/Header';
@@ -26,6 +27,7 @@ const AppContent = () => {
 
   return (
     <>
+     <ScrollToTop />
       {/* Conditional Header */}
       {!hideHeader && <Header />}
       

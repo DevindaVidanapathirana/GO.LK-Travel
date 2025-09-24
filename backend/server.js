@@ -11,8 +11,7 @@ const PORT = process.env.PORT || 5000;
 // Configure CORS properly
 const corsOptions = {
   origin: [
-    'https://go-lk-travel-frontend.onrender.com',
-    'http://localhost:3000'
+    'https://go-lk-travel-frontend.onrender.com'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],

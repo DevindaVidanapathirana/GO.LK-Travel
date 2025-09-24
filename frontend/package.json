@@ -1,7 +1,5 @@
 
 {
-  "homepage": "https://go-lk-travel-frontend.onrender.com",
-
   "name": "frontend",
   "version": "0.1.0",
   "private": true,

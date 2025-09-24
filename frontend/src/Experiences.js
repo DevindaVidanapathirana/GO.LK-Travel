@@ -45,7 +45,7 @@ const Experiences = () => {
         {
           id: 4,
           title: 'Helicopter Safari',
-          image: 'https://images.unsplash.com/photo-1506905925346-14bda2d134d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          image: 'https://maunaloahelicopters.edu/wp-content/uploads/2021/06/IMG_7414-1-scaled.jpg',
           description: 'Soar above breathtaking landscapes in a private helicopter',
           price: 'From $2,000',
           duration: '2-4 hours',
@@ -63,7 +63,7 @@ const Experiences = () => {
         {
           id: 6,
           title: 'Mountain Climbing',
-          image: 'https://images.unsplash.com/photo-1551632811-561732d1e111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          image: 'https://t3.ftcdn.net/jpg/01/89/10/70/C.jpg',
           description: 'Conquer the world\'s most challenging peaks with expert guides',
           price: 'From $3,000',
           duration: '3-7 days',
@@ -189,23 +189,34 @@ const Experiences = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-luxury-gold to-yellow-400 rounded-3xl p-12 text-white">
-            <h3 className="text-3xl font-serif font-bold mb-4">
-              Ready to Create Your Dream Experience?
-            </h3>
-            <p className="text-xl mb-8 opacity-90">
-              Let our travel experts craft a personalized journey just for you
-            </p>
-            <button 
-              onClick={() => navigate('/booking')}
-              className="bg-white text-luxury-gold px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-            >
-              Start Planning
-            </button>
-          </div>
-        </div>
+      {/* Call to Action */}
+<div className="text-center mt-20">
+  <div className="luxury-gradient rounded-3xl p-12 text-white relative overflow-hidden">
+    {/* Optional background pattern for extra luxury */}
+    <div className="absolute inset-0 opacity-10">
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div className="relative z-10">
+      <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+        Ready to Create Your Dream Experience?
+      </h3>
+      <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
+        Let our travel experts craft a personalized journey just for you
+      </p>
+      <button 
+        onClick={() => navigate('/booking')}
+        className="bg-white text-luxury-dark px-8 py-4 rounded-full font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-gray-50"
+      >
+        Start Planning
+      </button>
+    </div>
+    
+    {/* Floating elements for visual interest */}
+    <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
+    <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+  </div>
+</div>
       </div>
     </section>
   );

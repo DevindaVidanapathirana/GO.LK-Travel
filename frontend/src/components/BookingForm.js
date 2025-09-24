@@ -39,6 +39,7 @@ const BookingForm = ({ onNavigate }) => {
   });
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -194,15 +195,50 @@ const BookingForm = ({ onNavigate }) => {
     }
   };
 
-  /* Form Submission (No backend needed) */
-  const handleSubmit = (e) => {
+  /* Form Submission (With Backend API) */
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const stepErrors = validateStep(4);
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
     }
-    setIsSubmitted(true);
+
+    setIsSubmitting(true);
+    setErrors({});
+
+    try {
+      const response = await fetch('https://go-lk-travel-backend.onrender.com/api/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setErrors({});
+      } else {
+        // Handle validation errors from backend
+        if (result.errors && result.errors.length > 0) {
+          const newErrors = {};
+          result.errors.forEach(error => {
+            newErrors[error.field] = error.message;
+          });
+          setErrors(newErrors);
+        } else {
+          setErrors({ general: result.message || 'Failed to submit booking' });
+        }
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setErrors({ general: 'Network Error: Please check your internet connection' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   /* Step 1: Personal Information */
@@ -705,7 +741,12 @@ const BookingForm = ({ onNavigate }) => {
           <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-2xl">
             {errors.general && (
               <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl">
-                {errors.general}
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {errors.general}
+                </div>
               </div>
             )}
             
@@ -740,9 +781,14 @@ const BookingForm = ({ onNavigate }) => {
               ) : (
                 <button
                   type="submit"
-                  className="luxury-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-white cursor-not-allowed'
+                      : 'luxury-gradient text-white hover:shadow-lg transform hover:scale-105'
+                  }`}
                 >
-                  Submit Booking Request
+                  {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
                 </button>
               )}
             </div>

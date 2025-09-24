@@ -16,11 +16,12 @@ const Contact = () => {
     });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
-  /* Form Submission (Simplified - No backend required) */
-  const handleSubmit = (e) => {
+  /* Form Submission (With Backend API) */
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Basic validation
@@ -34,19 +35,50 @@ const Contact = () => {
       return;
     }
 
-    // Simulate successful submission
-    setSubmitStatus('success');
+    setIsSubmitting(true);
     setErrors({});
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      destination: '',
-      message: ''
-    });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitStatus(null), 5000);
+
+    try {
+      const response = await fetch('https://go-lk-travel-backend.onrender.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setErrors({});
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          destination: '',
+          message: ''
+        });
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        // Handle validation errors from backend
+        if (result.errors && result.errors.length > 0) {
+          const backendErrors = {};
+          result.errors.forEach(error => {
+            backendErrors[error.field] = error.message;
+          });
+          setErrors(backendErrors);
+        } else {
+          setErrors({ general: result.message || 'Failed to submit contact form' });
+        }
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setErrors({ general: 'Network Error: Please check your internet connection' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   /* Contact Information Data */
@@ -251,9 +283,14 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl font-semibold text-lg luxury-gradient text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-white cursor-not-allowed'
+                      : 'luxury-gradient text-white hover:shadow-lg transform hover:scale-105'
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
                 
                 {submitStatus === 'success' && (

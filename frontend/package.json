@@ -1,9 +1,6 @@
 
 {
 
-  "homepage": "https://github.com/DevindaVidanapathirana/GO.LK-Travel",
-
-
   "name": "frontend",
   "version": "0.1.0",
   "private": true,

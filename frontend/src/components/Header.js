@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
+  /* Handle scroll effect */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -13,14 +16,13 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
+  /* Navigation Items */
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Destinations', href: '#destinations' },
     { name: 'Experiences', href: '#experiences' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-    
+    { name: 'Contact', href: '#contact' }
   ];
 
   return (
@@ -52,7 +54,10 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <button className="luxury-gradient text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+            <button 
+              onClick={() => navigate('/booking')}
+              className="luxury-gradient text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            >
               Book Now
             </button>
           </div>
@@ -82,7 +87,13 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <button className="luxury-gradient text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 w-full">
+              <button 
+                onClick={() => {
+                  navigate('/booking');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="luxury-gradient text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 w-full"
+              >
                 Book Now
               </button>
             </div>

@@ -130,27 +130,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="border-t border-luxury-gold/30 mt-12 pt-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-serif font-bold mb-4 text-luxury-gold">
-              Stay Updated
-            </h3>
-            <p className="text-luxury-cream mb-6 font-sans">
-              Subscribe to our newsletter for exclusive travel offers and luxury destination updates.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-xl bg-luxury-dark border border-luxury-gold/30 text-luxury-cream placeholder-luxury-cream/60 focus:border-luxury-gold focus:outline-none transition-colors duration-300"
-              />
-              <button className="luxury-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Footer */}
